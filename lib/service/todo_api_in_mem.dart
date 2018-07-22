@@ -13,15 +13,26 @@ class TodoAPIInMem implements TodoAPI {
   }
 
   getAll() {
-    return Future.value(todos);
+    List<Todo> todosToReturn = [];
+    for (final todo in todos) {
+      todosToReturn.add(Todo(todo.id, todo.title, todo.description, todo.due));
+    }
+
+    return Future.value(todosToReturn);
   }
 
   getOne({String id}) {
-    return Future.value(todos.where((todo) => todo.id == id).first);
+    final todosMatching = todos.where((todo) => todo.id == id);
+    if (todosMatching.length == 0) {
+      return Future.value(null);
+    }
+    final todo = todosMatching.first;
+    final todoToReturn = Todo(todo.id, todo.title, todo.description, todo.due);
+    return Future.value(todoToReturn);
   }
 
-  updateOne({String id, Todo entity}) {
-    var index = todos.indexWhere((todo) => todo.id == id);
+  updateOne({Todo entity}) {
+    var index = todos.indexWhere((todo) => todo.id == entity.id);
     todos[index] = entity;
     return Future.value();
   }

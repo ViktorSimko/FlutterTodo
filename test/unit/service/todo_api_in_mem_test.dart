@@ -41,7 +41,7 @@ void main() {
     var todo = Todo('0', 'First', 'Do the laundry', DateTime.now());
     api.todos = [todo];
     var todoUpdate = Todo('0', 'First updated', "Don't do the laundry", DateTime.now());
-    await api.updateOne(id: '0', entity: todoUpdate);
+    await api.updateOne(entity: todoUpdate);
     expect(api.todos[0].title, equals('First updated'));
   });
 

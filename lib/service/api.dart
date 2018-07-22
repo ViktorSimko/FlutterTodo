@@ -10,7 +10,7 @@ abstract class API<E extends Entity> {
 
   Future<E> getOne({String id});
   
-  Future<void> updateOne({String id, E entity});
+  Future<void> updateOne({E entity});
 
   Future<void> deleteOne({String id});
 

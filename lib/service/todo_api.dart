@@ -9,7 +9,7 @@ abstract class TodoAPI implements API<Todo> {
 
   getOne({String id});
 
-  updateOne({String id, Todo entity});
+  updateOne({Todo entity});
 
   deleteOne({String id});
 

@@ -15,7 +15,7 @@ class TodoAPIWeb implements TodoAPI {
     return null;
   }
 
-  updateOne({String id, Todo entity}) {
+  updateOne({Todo entity}) {
     return null;
   }
 
