@@ -51,7 +51,7 @@ class _TodoDetailsState extends State<TodoDetails> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todos'),
+        title: Text(widget.todo == null ? 'Add todo' : 'Edit todo'),
         actions: <Widget>[
           Container(
             child: FlatButton(
