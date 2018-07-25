@@ -73,7 +73,7 @@ class _TodoListState extends State<TodoList> {
   Widget build(BuildContext context) {
     final gap = MediaQuery.of(context).size.width * .05;
 
-    var listFutureBuilder = FutureBuilder(
+    final listFutureBuilder = FutureBuilder(
       future: widget.api.getAll(),
       builder: (context, snapshot) {
         switch(snapshot.connectionState)  {
